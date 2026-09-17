@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S Mart | Online Shop</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f7f7f7;color:#222}
+header{background:#111;color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-size:26px;font-weight:800}.logo span{color:#ffd43b}
+.cart{background:#ffd43b;color:#111;padding:9px 14px;border-radius:20px;font-weight:bold}
+.hero{padding:55px 20px;text-align:center;background:linear-gradient(135deg,#fff3b0,#fff)}
+.hero h1{font-size:38px;margin:0 0 10px}.hero p{font-size:18px;color:#555}
+.btn{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;margin-top:10px}
+.container{max-width:1050px;margin:auto;padding:30px 18px}
+h2{text-align:center;margin-bottom:25px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #00000012}
+.pic{height:190px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:65px}
+.info{padding:16px}.info h3{margin:0 0 8px}.price{font-size:20px;font-weight:bold;margin:8px 0}
+.order{display:block;text-align:center;background:#16a34a;color:#fff;padding:10px;border-radius:8px;text-decoration:none;margin-top:12px}
+.contact{background:#111;color:#fff;border-radius:14px;padding:28px;text-align:center;margin-top:30px}
+footer{text-align:center;padding:25px;color:#666}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span>S</span> Mart</div>
+  <div class="cart">🛒 Cart</div>
+</header>
+
+<section class="hero">
+  <h1>Welcome to S Mart</h1>
+  <p>ভালো পণ্য, সাশ্রয়ী দাম — আপনার বিশ্বস্ত অনলাইন শপ</p>
+  <a class="btn" href="#products">পণ্য দেখুন</a>
+</section>
+
+<div class="container" id="products">
+<h2>আমাদের পণ্য</h2>
+<div class="products">
+  <div class="card"><div class="pic">🚲</div><div class="info">
+    <h3>Baby Cycle</h3><div class="price">৳ 2,500</div><p>শিশুদের জন্য মজবুত ও আকর্ষণীয় সাইকেল।</p>
+    <a class="order" href="tel:01967597766">📞 অর্ডার করুন</a>
+  </div></div>
+  <div class="card"><div class="pic">🧥</div><div class="info">
+    <h3>Winter Jacket</h3><div class="price">৳ 650</div><p>শীতের জন্য আরামদায়ক জ্যাকেট।</p>
+    <a class="order" href="tel:01967597766">📞 অর্ডার করুন</a>
+  </div></div>
+  <div class="card"><div class="pic">👕</div><div class="info">
+    <h3>Winter T-Shirt</h3><div class="price">৳ 450</div><p>মোটা ও আরামদায়ক শীতের টি-শার্ট।</p>
+    <a class="order" href="tel:01967597766">📞 অর্ডার করুন</a>
+  </div></div>
+  <div class="card"><div class="pic">👳</div><div class="info">
+    <h3>Panjabi</h3><div class="price">৳ 750</div><p>আকর্ষণীয় ডিজাইনের পাঞ্জাবি।</p>
+    <a class="order" href="tel:01967597766">📞 অর্ডার করুন</a>
+  </div></div>
+</div>
+
+<div class="contact">
+<h2>যোগাযোগ</h2>
+<p>📞 01967597766</p>
+<p>📍 Gazipur, Dhaka</p>
+<a class="btn" href="tel:01967597766">এখনই যোগাযোগ করুন</a>
+</div>
+</div>
+
+<footer>© 2026 S Mart — All Rights Reserved</footer>
+</body>
+</html>
