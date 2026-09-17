@@ -1,225 +1,259 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S Mart | Online Shop</title>
+<title>SM Mart Shop | Online Shop</title>
 
 <style>
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f5f5;
-  color:#111;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#111;
 }
 
 header{
-  background:#111;
-  color:#fff;
-  padding:16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+background:#111;
+color:#fff;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .logo{
-  font-size:26px;
-  font-weight:800;
+font-size:26px;
+font-weight:800;
 }
 
 .logo span{
-  background:#ffd43b;
-  color:#111;
-  padding:8px;
-  border-radius:8px;
+background:#ffd43b;
+color:#111;
+padding:8px;
+border-radius:8px;
 }
 
 .cart{
-  font-size:16px;
+font-size:16px;
 }
 
 .hero{
-  padding:55px 20px;
-  text-align:center;
-  background:#fff9d9;
+padding:55px 20px;
+text-align:center;
+background:#fff9d9;
 }
 
 .hero h1{
-  font-size:38px;
-  margin:0 0 10px;
+font-size:38px;
+margin:0 0 10px;
 }
 
 .hero p{
-  font-size:20px;
+font-size:20px;
 }
 
 .btn{
-  display:inline-block;
-  background:#111;
-  color:#fff;
-  padding:14px 24px;
-  border-radius:10px;
-  text-decoration:none;
-  margin-top:15px;
+display:inline-block;
+background:#111;
+color:#fff;
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+margin-top:15px;
 }
 
 .container{
-  max-width:1050px;
-  margin:auto;
-  padding:30px 16px;
+max-width:1050px;
+margin:auto;
+padding:30px 16px;
 }
 
 h2{
-  text-align:center;
-  margin-bottom:25px;
+text-align:center;
+margin-bottom:25px;
 }
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
 .card{
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.12);
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 3px 12px rgba(0,0,0,.12);
 }
 
 .pic{
-  height:230px;
-  background:#eee;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+height:230px;
+background:#eee;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
 }
 
 .pic img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .info{
-  padding:16px;
+padding:16px;
 }
 
 .info h3{
-  margin:0 0 8px;
+margin:0 0 8px;
 }
 
 .price{
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:12px;
+font-size:20px;
+font-weight:bold;
+margin-bottom:12px;
 }
 
 .order{
-  display:block;
-  width:100%;
-  text-align:center;
-  background:#198754;
-  color:#fff;
-  padding:12px;
-  border-radius:8px;
-  text-decoration:none;
-  border:0;
-  cursor:pointer;
-  font-size:16px;
-  font-weight:bold;
+display:block;
+width:100%;
+text-align:center;
+background:#198754;
+color:#fff;
+padding:13px;
+border-radius:8px;
+border:0;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
 }
 
 .contact{
-  text-align:center;
-  padding:30px 16px;
-  background:#fff;
+text-align:center;
+padding:30px 16px;
+background:#fff;
 }
 
 footer{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:20px;
+background:#111;
+color:#fff;
+text-align:center;
+padding:20px;
 }
 
-/* ORDER FORM */
+/* ORDER POPUP */
+
 .orderBox{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.65);
-  z-index:999;
-  overflow:auto;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:999;
+overflow:auto;
+padding:20px;
 }
 
 .orderForm{
-  background:#fff;
-  max-width:450px;
-  margin:40px auto;
-  padding:25px;
-  border-radius:15px;
-}
-
-.orderForm h2{
-  margin-top:0;
+background:#fff;
+max-width:450px;
+margin:30px auto;
+padding:25px;
+border-radius:15px;
+position:relative;
 }
 
 .close{
-  float:right;
-  font-size:28px;
-  cursor:pointer;
-  color:#555;
+position:absolute;
+right:18px;
+top:8px;
+font-size:30px;
+cursor:pointer;
+color:#555;
+}
+
+.productInfo{
+background:#f5f5f5;
+padding:14px;
+border-radius:8px;
+margin-bottom:15px;
 }
 
 .orderForm label{
-  display:block;
-  margin-top:12px;
-  margin-bottom:5px;
-  font-weight:bold;
+display:block;
+margin-top:12px;
+margin-bottom:5px;
+font-weight:bold;
 }
 
 .orderForm input,
 .orderForm textarea,
 .orderForm select{
-  width:100%;
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
 }
 
 .orderForm textarea{
-  height:80px;
-  resize:none;
+height:80px;
+resize:none;
 }
 
 .total{
-  background:#f1f1f1;
-  padding:12px;
-  border-radius:8px;
-  margin-top:15px;
-  font-size:18px;
-  font-weight:bold;
+background:#fff9d9;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+font-size:19px;
+font-weight:bold;
 }
 
 .confirm{
-  width:100%;
-  background:#198754;
-  color:#fff;
-  border:0;
-  padding:14px;
-  border-radius:8px;
-  margin-top:15px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
+width:100%;
+background:#198754;
+color:#fff;
+border:0;
+padding:14px;
+border-radius:8px;
+margin-top:15px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.success{
+display:none;
+text-align:center;
+padding:20px 5px;
+}
+
+.successIcon{
+font-size:55px;
+}
+
+.success h2{
+color:#198754;
+}
+
+.homeButton{
+background:#111;
+color:#fff;
+border:0;
+padding:12px 20px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
 }
 </style>
 </head>
@@ -227,94 +261,161 @@ footer{
 <body>
 
 <header>
-  <div class="logo"><span>S</span> Mart</div>
-  <div class="cart">🛒 Cart</div>
+
+<div class="logo">
+<span>SM</span> Mart Shop
+</div>
+
+<div class="cart">
+🛒 Cart
+</div>
+
 </header>
 
+
 <section class="hero">
-  <h1>Welcome to SM Mart Shop </h1>
-  <p>ভালো পণ্য, সাশ্রয়ী দাম — আপনার বিশ্বস্ত অনলাইন শপ</p>
-  <a class="btn" href="#products">পণ্য দেখুন</a>
+
+<h1>Welcome to SM Mart Shop</h1>
+
+<p>
+ভালো পণ্য, সাশ্রয়ী দাম —
+আপনার বিশ্বস্ত অনলাইন শপ
+</p>
+
+<a class="btn" href="#products">
+🛍️ পণ্য দেখুন
+</a>
+
 </section>
+
 
 <div class="container" id="products">
 
-  <h2>আমাদের পণ্য</h2>
+<h2>আমাদের পণ্য</h2>
 
-  <div class="products">
-
-    <!-- PRODUCT 1 -->
-    <div class="card">
-      <div class="pic">
-        <img src="file_00000000d1b882119f1b4587d410d762.png" alt="Baby Cycle">
-      </div>
-
-      <div class="info">
-        <h3>Baby Cycle</h3>
-        <div class="price">৳630</div>
-
-        <button class="order"
-        onclick="openOrder('Baby Cycle',630)">
-        🛒 Order Now
-        </button>
-      </div>
-    </div>
+<div class="products">
 
 
-    <!-- PRODUCT 2 -->
-    <div class="card">
-      <div class="pic">
-        <img src="product2.jpg" alt="Winter Jacket">
-      </div>
+<!-- PRODUCT 1 -->
 
-      <div class="info">
-        <h3>Winter Jacket</h3>
-        <div class="price">৳</div>
+<div class="card">
 
-        <button class="order"
-        onclick="openOrder('Winter Jacket',)">
-        🛒 Order Now
-        </button>
-      </div>
-    </div>
+<div class="pic">
+<img
+src="file_00000000d1b882119f1b4587d410d762.png"
+alt="Baby Cycle">
+</div>
 
+<div class="info">
 
-    <!-- PRODUCT 3 -->
-    <div class="card">
-      <div class="pic">
-        <img src="product3.jpg" alt="Winter T-Shirt">
-      </div>
+<h3>Baby Cycle</h3>
 
-      <div class="info">
-        <h3>Winter T-Shirt</h3>
-        <div class="price">৳</div>
+<div class="price">
+৳630
+</div>
 
-        <button class="order"
-        onclick="openOrder('Winter T-Shirt',)">
-        🛒 Order Now
-        </button>
-      </div>
-    </div>
+<button
+class="order"
+onclick="openOrder('Baby Cycle',630)">
+
+🛒 Order Now
+
+</button>
+
+</div>
+</div>
 
 
-    <!-- PRODUCT 4 -->
-    <div class="card">
-      <div class="pic">
-        <img src="product4.jpg" alt="Panjabi">
-      </div>
+<!-- PRODUCT 2 -->
 
-      <div class="info">
-        <h3>Panjabi</h3>
-        <div class="price">৳</div>
+<div class="card">
 
-        <button class="order"
-        onclick="openOrder('Panjabi',)">
-        🛒 Order Now
-        </button>
-      </div>
-    </div>
+<div class="pic">
+<img
+src="product2.jpg"
+alt="Winter Jacket">
+</div>
 
-  </div>
+<div class="info">
+
+<h3>Winter Jacket</h3>
+
+<div class="price">
+৳850
+</div>
+
+<button
+class="order"
+onclick="openOrder('Winter Jacket',850)">
+
+🛒 Order Now
+
+</button>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="card">
+
+<div class="pic">
+<img
+src="product3.jpg"
+alt="Winter T-Shirt">
+</div>
+
+<div class="info">
+
+<h3>Winter T-Shirt</h3>
+
+<div class="price">
+৳650
+</div>
+
+<button
+class="order"
+onclick="openOrder('Winter T-Shirt',650)">
+
+🛒 Order Now
+
+</button>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="card">
+
+<div class="pic">
+<img
+src="product4.jpg"
+alt="Panjabi">
+</div>
+
+<div class="info">
+
+<h3>Panjabi</h3>
+
+<div class="price">
+৳750
+</div>
+
+<button
+class="order"
+onclick="openOrder('Panjabi',750)">
+
+🛒 Order Now
+
+</button>
+
+</div>
+</div>
+
+</div>
 </div>
 
 
@@ -322,90 +423,143 @@ footer{
 
 <div class="orderBox" id="orderBox">
 
-  <div class="orderForm">
+<div class="orderForm">
 
-    <span class="close" onclick="closeOrder()">×</span>
-
-    <h2>🛒 অর্ডার করুন</h2>
-
-    <p>
-      পণ্য:
-      <strong id="productName"></strong>
-    </p>
-
-    <p>
-      পণ্যের দাম:
-      <strong>৳<span id="productPrice"></span></strong>
-    </p>
+<div
+class="close"
+onclick="closeOrder()">
+×
+</div>
 
 
-    <label>ক্রেতার নাম</label>
-    <input type="text"
-           id="customerName"
-           placeholder="আপনার নাম লিখুন">
+<div id="orderContent">
+
+<h2>🛒 Order Now</h2>
 
 
-    <label>মোবাইল নম্বর</label>
-    <input type="tel"
-           id="customerPhone"
-           placeholder="01XXXXXXXXX">
+<div class="productInfo">
+
+<p>
+<b>পণ্য:</b>
+<span id="productName"></span>
+</p>
+
+<p>
+<b>পণ্যের দাম:</b>
+৳<span id="productPrice"></span>
+</p>
+
+</div>
 
 
-    <label>সম্পূর্ণ ঠিকানা</label>
-    <textarea
-      id="customerAddress"
-      placeholder="বাড়ি, গ্রাম, থানা, জেলা লিখুন"></textarea>
+<label>👤 ক্রেতার নাম</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="আপনার নাম লিখুন">
 
 
-    <label>ডেলিভারি চার্জ</label>
+<label>📱 মোবাইল নম্বর</label>
 
-    <select id="deliveryCharge"
-            onchange="calculateTotal()">
-
-      <option value="80>
-        ঢাকার ভিতরে — ৳80
-      </option>
-
-      <option value="150>
-        ঢাকার বাইরে — ৳150
-      </option>
-
-    </select>
+<input
+type="tel"
+id="customerPhone"
+placeholder="01XXXXXXXXX">
 
 
-    <div class="total">
-      মোট দাম:
-      ৳<span id="totalPrice">0</span>
-    </div>
+<label>🏠 সম্পূর্ণ ঠিকানা</label>
+
+<textarea
+id="customerAddress"
+placeholder="বাড়ি, গ্রাম, থানা, জেলা লিখুন"></textarea>
 
 
-    <button class="confirm"
-            onclick="confirmOrder()">
-      ✅ অর্ডার কনফার্ম করুন
-    </button>
+<label>🚚 ডেলিভারি চার্জ</label>
 
-  </div>
+<select
+id="deliveryCharge"
+onchange="calculateTotal()">
 
+<option value="100">
+ঢাকার ভিতরে — ৳100
+</option>
+
+<option value="150">
+ঢাকার বাইরে — ৳150
+</option>
+
+</select>
+
+
+<div class="total">
+
+💰 মোট দাম:
+৳<span id="totalPrice">0</span>
+
+</div>
+
+
+<button
+class="confirm"
+onclick="confirmOrder()">
+
+✅ অর্ডার কনফার্ম করুন
+
+</button>
+
+</div>
+
+
+<div
+class="success"
+id="success">
+
+<div class="successIcon">✅</div>
+
+<h2>অর্ডার সফল হয়েছে!</h2>
+
+<p>
+আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানো হয়েছে।
+</p>
+
+<button
+class="homeButton"
+onclick="closeOrder()">
+
+🏠 আবার শপিং করুন
+
+</button>
+
+</div>
+
+</div>
 </div>
 
 
 <section class="contact">
 
-  <h2>যোগাযোগ</h2>
+<h2>যোগাযোগ</h2>
 
-  <p>📞 01967597766</p>
+<p>📞 01967597766</p>
 
-  <p>📍 Gazipur, Dhaka</p>
+<p>📍 Gazipur, Dhaka</p>
 
-  <a class="btn" href="tel:01967597766">
-    এখনই যোগাযোগ করুন
+<a
+class="btn"
+href="tel:01967597766">
+
+📞 এখনই যোগাযোগ করুন
+
 </a>
 
 </section>
 
 
 <footer>
-  © 2026 S Mart — All Rights Reserved
+
+© 2026 SM Mart Shop — All Rights Reserved
+
 </footer>
 
 
@@ -415,110 +569,123 @@ let selectedProduct = "";
 let selectedPrice = 0;
 
 
-// ORDER FORM OPEN
+function openOrder(product,price){
 
-function openOrder(product, price){
+selectedProduct = product;
+selectedPrice = price;
 
-  selectedProduct = product;
-  selectedPrice = price;
+document.getElementById("productName").innerText = product;
 
-  document.getElementById("productName").innerText = product;
+document.getElementById("productPrice").innerText = price;
 
-  document.getElementById("productPrice").innerText = price;
+document.getElementById("orderBox").style.display = "block";
 
-  document.getElementById("orderBox").style.display = "block";
+document.getElementById("orderContent").style.display = "block";
 
-  calculateTotal();
+document.getElementById("success").style.display = "none";
+
+calculateTotal();
+
 }
 
-
-// CALCULATE TOTAL
 
 function calculateTotal(){
 
-  let delivery =
-    Number(document.getElementById("deliveryCharge").value);
+let delivery =
+Number(document.getElementById("deliveryCharge").value);
 
-  let total = selectedPrice + delivery;
+let total = selectedPrice + delivery;
 
-  document.getElementById("totalPrice").innerText = total;
+document.getElementById("totalPrice").innerText = total;
+
 }
 
-
-// CLOSE
 
 function closeOrder(){
 
-  document.getElementById("orderBox").style.display = "none";
+document.getElementById("orderBox").style.display = "none";
 
 }
 
 
-// CONFIRM ORDER
-
 function confirmOrder(){
 
-  let name =
-    document.getElementById("customerName").value.trim();
+let name =
+document.getElementById("customerName").value.trim();
 
-  let phone =
-    document.getElementById("customerPhone").value.trim();
+let phone =
+document.getElementById("customerPhone").value.trim();
 
-  let address =
-    document.getElementById("customerAddress").value.trim();
+let address =
+document.getElementById("customerAddress").value.trim();
 
-  let delivery =
-    Number(document.getElementById("deliveryCharge").value);
+let delivery =
+Number(document.getElementById("deliveryCharge").value);
 
-  let total =
-    selectedPrice + delivery;
-
-
-  if(name === ""){
-    alert("ক্রেতার নাম লিখুন");
-    return;
-  }
-
-  if(phone === ""){
-    alert("মোবাইল নম্বর লিখুন");
-    return;
-  }
-
-  if(address === ""){
-    alert("সম্পূর্ণ ঠিকানা লিখুন");
-    return;
-  }
+let total =
+selectedPrice + delivery;
 
 
-  let message =
-`🛒 নতুন অর্ডার
+if(name === ""){
 
-পণ্য: ${selectedProduct}
-পণ্যের দাম: ৳${selectedPrice}
+alert("ক্রেতার নাম লিখুন");
+return;
 
-ক্রেতার নাম: ${name}
-মোবাইল: ${phone}
-ঠিকানা: ${address}
+}
 
-ডেলিভারি চার্জ: ৳$100{100delivery}
+if(phone === ""){
 
-মোট দাম: ৳$730{730total}`;
+alert("মোবাইল নম্বর লিখুন");
+return;
 
+}
 
-  let whatsappNumber = "8801967597766";
+if(address === ""){
 
-  let url =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message);
+alert("সম্পূর্ণ ঠিকানা লিখুন");
+return;
+
+}
 
 
-  window.open(url, "_blank");
+let message =
+`🛒 SM Mart Shop - নতুন অর্ডার
+
+📦 পণ্য: ${selectedProduct}
+
+💵 পণ্যের দাম: ৳${selectedPrice}
+
+👤 ক্রেতার নাম: ${name}
+
+📱 মোবাইল: ${phone}
+
+🏠 ঠিকানা: ${address}
+
+🚚 ডেলিভারি চার্জ: ৳${delivery}
+
+💰 মোট দাম: ৳${total}`;
+
+
+let whatsappNumber = "8801967597766";
+
+
+let url =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+
+window.open(url,"_blank");
+
+
+document.getElementById("orderContent").style.display = "none";
+
+document.getElementById("success").style.display = "block";
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
